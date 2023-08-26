@@ -1,6 +1,7 @@
 <template>
-  <div class="container">
-    <h1 class="display-4">Daftar Rencana Perjalanan</h1>
-    <RencanaPerjalanan v-for="plan in plans" :key="plan._id" :plan="plan" class="mb-4" />
-  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <span class="navbar-text"> &copy; 2023 TipWeb. All right reserved </span>
+    </div>
+  </nav>
 </template>
