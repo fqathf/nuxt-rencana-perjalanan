@@ -51,7 +51,9 @@ export default {
     buildDir: 'nuxt-dist',
   },
 
-  router: {
-    middleware: ['welcome']
+  edge: {
+    functions: {
+      '/welcome': '~/edge/welcome.js'
+    }
   },
 }
