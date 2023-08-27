@@ -50,4 +50,8 @@ export default {
   build: {
     buildDir: 'nuxt-dist',
   },
+
+  router: {
+    middleware: ['welcome']
+  },
 }
