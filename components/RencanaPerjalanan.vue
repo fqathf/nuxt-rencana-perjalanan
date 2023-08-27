@@ -7,7 +7,9 @@
         <h6 class="card-subtitle mb-2 text-muted">{{ destination.name }}</h6>
         <p class="card-text">{{ destination.description }}</p>
         <ul class="list-unstyled">
-          <li v-for="(activity, index) in destination.activities" :key="index">{{ activity }}</li>
+          <li v-for="(activity, index) in destination.activities" :key="index">
+            {{ activity }}
+          </li>
         </ul>
       </div>
     </div>
