@@ -14,6 +14,9 @@
         <li class="nav-link">
           <NuxtLink class="text-light" to="./tutorial"> Tutorial</NuxtLink>
         </li>
+        <li class="nav-link">
+          <NuxtLink class="text-light" to="./todo"> latihanTodo</NuxtLink>
+        </li>
       </ul>
     </div>
   </nav>

@@ -50,10 +50,4 @@ export default {
   build: {
     buildDir: 'nuxt-dist',
   },
-
-  edge: {
-    functions: {
-      '/welcome': '~/edge/welcome.js'
-    }
-  },
 }

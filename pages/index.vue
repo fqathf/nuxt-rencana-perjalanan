@@ -14,7 +14,7 @@
         class="align-self-center"
         src="../assets/animation_llpzpsh2_small.gif"
         alt=""
-        style="height: 400px; width: 400px"
+        style="height: 400px; width: 400px; z-index: -10;"
       />
     </div>
   </div>
