@@ -12,6 +12,17 @@
             placeholder="Search"
             v-model="searchQuery"
           />
+          <b-form-select
+            v-model="categoryQuery"
+            id="inline-form-custom-select-pref"
+            class="mb-2 mr-sm-2 mb-sm-0"
+            :options="[
+              { text: 'Choose...', value: null },
+              { text: 'Odd', value: 'odd' },
+              { text: 'Even', value: 'even' },
+            ]"
+            :value="null"
+          ></b-form-select>
           <div class="d-flex align-item-center justify-content-end w-100">
             <span class="me-2">View As</span>
             <button
@@ -72,7 +83,7 @@
 import CardItem from '@/components/Card/CardItem.vue'
 
 export default {
-  layout (context) {
+  layout(context) {
     return 'default'
   },
   components: {
@@ -81,6 +92,7 @@ export default {
   data() {
     return {
       searchQuery: '',
+      categoryQuery: '',
       isGrid: true,
       isCreating: false,
       tasks: [
@@ -88,29 +100,38 @@ export default {
           title: 'Task 1',
           description: 'ini deskripsi',
           isDone: false,
+          category: 'odd',
         },
         {
           title: 'Task 2',
           description: 'ini deskripsi 2',
           isDone: false,
+          category: 'even',
         },
         {
           title: 'Task 3',
           description: ' ini deskripsi 3',
           isDone: false,
+          category: 'odd',
         },
       ],
-      isCreating: false,
       isGrid: false,
     }
   },
   computed: {
     resultQuery() {
       if (this.searchQuery) {
-        return this.task.filter((item) => {
-          return this.searchQuery.toLowerCase
-            .split(' ')
-            .every((v) => item.title.toLowerCase().include(v))
+        return this.tasks.filter((item) => {
+          return this.searchQuery
+            .toLowerCase()
+            .split('')
+            .every((v) => item.title.toLowerCase().includes(v))
+        })
+      } else if (this.categoryQuery) {
+        return this.tasks.filter((item) => {
+          return this.categoryQuery
+            .split('')
+            .every((v) => item.category.includes(v))
         })
       } else {
         console.log(this.tasks)
